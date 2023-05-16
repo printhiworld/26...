@@ -1,0 +1,23 @@
+#version: "3.9"
+#services:
+#  api:
+#    volumes:
+#      - ./docker_config.py:/code/default_config.py
+#    ports:
+#    - 8000:80
+#    depends_on:
+#      postgres:
+#        condition: service_healthy
+#
+#  postgres:
+#    volumes:
+#      - ./docker_config.py:/code/default_config.py
+#    image: postgres:latest
+#    environment:
+#      POSTGRES_PASSWORD: password
+#      POSTGRES_DB: myapp
+#    healthcheck:
+#      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+#      interval: 5s
+#      timeout: 5s
+#      retries: 5
